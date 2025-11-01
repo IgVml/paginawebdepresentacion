@@ -1,0 +1,95 @@
+/*colores*/
+:root{
+  --bg: #051946;
+  --surface: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #22d3ee;
+  --primary-ink: #0b1324;
+  --radius: 16px;
+  --space: 1.2rem;
+  --shadow: 0 10px 18px rgba(0,0,0,.25);
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  background:linear-gradient(180deg,#0b1022,var(--bg));
+  font-family:system-ui;
+  color:var(--text);
+}
+
+/* portada */
+.site-header{
+  position:sticky; top:0;
+  background:rgba(17,24,39,.7);
+  backdrop-filter:blur(10px);
+  padding:var(--space);
+  display:flex; justify-content:space-between; align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.site-nav{ display:flex; gap:.75rem; }
+.nav-link{
+  color:var(--muted);
+  padding:.55rem 1rem;
+  border-radius:999px;
+}
+.nav-link:hover{ background:rgba(255,255,255,.06); color:var(--text); }
+.nav-link.is-active{ background:rgba(34,211,238,.12); color:var(--primary); }
+.container{ max-width:850px; margin:0 auto; padding:var(--space); }
+
+
+.hero{
+  text-align:center;
+  padding:2.5rem;
+  background:var(--surface);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-bottom:2rem;
+}
+.hero__subtitle{ color:var(--muted); }
+
+/* forma */
+.form-card .card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:var(--space);
+  box-shadow:var(--shadow);
+}
+.card__body{
+  display:grid;
+  gap:1rem;
+}
+input{
+  padding:.8rem;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.15);
+  background:#0f172a;
+  color:white;
+}
+
+/* funcion del boton */
+.btn{
+  padding:.75rem 1.4rem;
+  border-radius:999px;
+  text-align:center;
+  font-weight:600;
+  display:inline-block;
+}
+.btn--primary{
+  background:linear-gradient(180deg, rgba(34,211,238,.9), rgba(34,211,238,.75));
+  color:var(--primary-ink);
+  box-shadow: 0 8px 18px rgba(34,211,238,.25);
+}
+.btn--primary:hover{ filter:saturate(110%); }
+
+/* detalles de la imagen */
+.img-center{ text-align:center; margin-top:1rem; }
+img{ border-radius: var(--radius); }
+
+/* footer */
+.site-footer{
+  text-align:center;
+  color:var(--muted);
+  padding:2rem;
+}

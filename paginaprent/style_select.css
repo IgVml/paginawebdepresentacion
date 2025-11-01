@@ -1,0 +1,95 @@
+/*color*/
+:root{
+  --bg: #051946;
+  --surface: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #22d3ee;
+  --primary-ink: #0b1324;
+  --radius: 16px;
+  --space: 1.2rem;
+  --shadow: 0 10px 18px rgba(0,0,0,.25);
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  background:linear-gradient(180deg,#0b1022,var(--bg));
+  font-family:system-ui, sans-serif;
+  color:var(--text);
+  text-align:center;
+}
+
+/* portada */
+.site-header{
+  position:sticky; top:0;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:var(--space);
+  background:rgba(17,24,39,.7);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.site-nav{ display:flex; gap:.75rem; }
+.nav-link{
+  color:var(--muted);
+  padding:.55rem 1rem;
+  border-radius:999px;
+}
+.nav-link:hover{ background:rgba(255,255,255,.06); color:var(--text); }
+.nav-link.is-active{ background:rgba(34,211,238,.12); color:var(--primary); }
+.container{ max-width:900px; margin:0 auto; padding:var(--space); }
+
+
+.hero{
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:2.5rem;
+  margin-bottom:2rem;
+  box-shadow:var(--shadow);
+}
+.hero__subtitle{ color:var(--muted); }
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+@media(min-width:700px){
+  .grid{ grid-template-columns:repeat(3,1fr); }
+}
+
+/* tarjecta  */
+.card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:var(--space);
+  text-align:center;
+  border:1px solid rgba(255,255,255,.06);
+}
+.card__img{
+  width:150px; height:auto;
+  border-radius:var(--radius);
+  margin:0 auto 1rem;
+}
+
+/* funcion del boton */
+.btn{
+  padding:.75rem 1.4rem;
+  display:inline-block;
+  border-radius:999px;
+  font-weight:600;
+}
+.btn--primary{
+  background:linear-gradient(180deg, rgba(34,211,238,.9), rgba(34,211,238,.75));
+  color:var(--primary-ink);
+  box-shadow:0 8px 18px rgba(34,211,238,.25);
+}
+.btn--primary:hover{ filter:saturate(110%); }
+
+/* el footer */
+.site-footer{
+  padding:2rem;
+  color:var(--muted);
+}
