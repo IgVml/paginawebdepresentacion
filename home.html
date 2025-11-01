@@ -1,25 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reparacion de celular</title>
-    <link rel="stylesheet" href="homeestilo.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reparación de Celular</title>
+  <link rel="stylesheet" href="homeestilo.css" />
 </head>
 <body>
-    <h1 id="titulo">REPARACION</h1>
+  <header class="site-header">
+    <h1 class="site-title">Reparación de Celulares</h1>
+    <nav class="site-nav">
+      <a href="#" class="nav-link is-active">HOME</a>
+      <a href="#" class="nav-link">Servicios</a>
+      <a href="#" class="nav-link">Contacto</a>
+    </nav>
+  </header>
 
-    <div class="box">
-        <label for="usuario">Usuario:</label><br>
-        <input type="text" id="usuario" name="usuario" placeholder="nombre de usuario"><br><br>
+  <main class="container">
+    <section class="hero">
+      <h2 class="hero__title">Servicio Técnico Especializado</h2>
+      <p class="hero__subtitle">Diagnóstico y reparación rápida — Atención garantizada.</p>
+    </section>
 
-        <label for="mail">Mail:</label><br>
-        <input type="email" id="mail" name="mail" placeholder="correo@ejemplo.com">
-    </div>
+    <section class="form-card">
+      <h2 class="section-title">Ingresar datos</h2>
 
-    <img src="/imagenes/soymomo-celular-adolescentes-momophone-coral-frontal.webp" alt="celular_1" height="300" width="300">
-    <br>
+      <div class="card">
+        <div class="card__body">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" placeholder="nombre de usuario">
 
-    <a href="seleccion.html" class="boton">Aceptar</a>
+          <label for="mail">Correo</label>
+          <input type="email" id="mail" placeholder="correo@ejemplo.com">
+
+          <a href="seleccion.html" class="btn btn--primary">Aceptar</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="img-center">
+      <img src="/imagenes/soymomo-celular-adolescentes-momophone-coral-frontal.webp"
+           alt="celular" height="300" width="300">
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 Servicio Técnico</small>
+  </footer>
 </body>
 </html>
