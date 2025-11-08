@@ -1,69 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selecciona tu Modelo - Reparación de Celulares</title>
-    <link rel="stylesheet" href="producto.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selecciona tu Modelo</title>
+  <link rel="stylesheet" href="producto.css" />
 </head>
 <body>
-    <h1>Selecciona el tipo de dispositivo</h1>
+  <header class="site-header">
+    <h1 class="site-title">Reparación de Celulares</h1>
+    <nav class="site-nav">
+      <a href="home.html" class="nav-link">Inicio</a>
+      <a href="seleccion.html" class="nav-link">Seleccionar</a>
+      <a href="final_pag.html" class="nav-link">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2 class="hero__title">Selecciona tu modelo</h2>
+      <p class="hero__subtitle">Elige el dispositivo exacto para el diagnóstico</p>
+    </section>
+
     <div class="tabs">
-        <button class="tab active" onclick="showTab('one')">One</button>
-        <button class="tab" onclick="showTab('two')">Two</button>
-        <button class="tab" onclick="showTab('three')">Three</button>
+      <button class="tab" data-tab="android">Android</button>
+      <button class="tab" data-tab="IOS">iOS</button>
+      <button class="tab" data-tab="otros">Otros</button>
     </div>
 
-    <div id="one" class="tab-content active products-grid">
-        <div class="product">
-            <img src="imagenes/S24.webp" alt="S24">
-            <p>S24</p>
-            <button>Seleccionar</button>
-        </div>
-        <div class="product">
-            <img src="imagenes/note10.webp" alt="Note 10">
-            <p>Note 10</p>
-            <button>Seleccionar</button>
-        </div>
+    <div id="android" class="tab-content products-grid">
+      <div class="product">
+        <img src="imagenes/S24.webp" alt="S24">
+        <p>S24</p>
+        <button class="btn btn--primary">Seleccionar</button>
+      </div>
+      <div class="product">
+        <img src="imagenes/note10.webp" alt="Note 10">
+        <p>Note 10</p>
+        <button class="btn btn--primary">Seleccionar</button>
+      </div>
     </div>
 
-    <div id="two" class="tab-content products-grid">
-        <div class="product">
-            <img src="imagenes/a14.png" alt="A14">
-            <p>A14</p>
-            <button>Seleccionar</button>
-        </div>
-        <div class="product">
-            <img src="imagenes/m33.png" alt="M33">
-            <p>M33</p>
-            <button>Seleccionar</button>
-        </div>
+    <div id="IOS" class="tab-content products-grid">
+      <div class="product">
+        <img src="imagenes/a14.png" alt="A14">
+        <p>A14</p>
+        <button class="btn btn--primary">Seleccionar</button>
+      </div>
+      <div class="product">
+        <img src="imagenes/m33.png" alt="M33">
+        <p>M33</p>
+        <button class="btn btn--primary">Seleccionar</button>
+      </div>
     </div>
 
-    <div id="three" class="tab-content products-grid">
-        <div class="product">
-            <img src="imagenes/zflip6.png" alt="Z Flip 6">
-            <p>Z Flip 6</p>
-            <button>Seleccionar</button>
-        </div>
+    <div id="otros" class="tab-content products-grid">
+      <div class="product">
+        <img src="imagenes/zflip6.png" alt="Z Flip 6">
+        <p>Z Flip 6</p>
+        <button class="btn btn--primary">Seleccionar</button>
+      </div>
     </div>
+  </main>
 
-    <script>
-        function showTab(tabName) {
-            // Oculta  los contenidos
-            var contents = document.getElementsByClassName('tab-content');
-            for (var i = 0; i < contents.length; i++) {
-                contents[i].classList.remove('active');
-            }
-            // quita active de tabs
-            var tabs = document.getElementsByClassName('tab');
-            for (var i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove('active');
-            }
-            // muestra la pag seleccionado
-            document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
-        }
-    </script>
+  <footer class="site-footer">
+    <small>© 2025 Servicio Técnico</small>
+  </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.hash.replace('#', '?'));
+    const initialTab = urlParams.get('') || 'android';
+
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+        showTab(target);
+      });
+    });
+
+    function showTab(tabId) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    showTab(initialTab);
+  </script>
 </body>
 </html>
