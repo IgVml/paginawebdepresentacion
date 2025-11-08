@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactanos - Reparación de Celulares</title>
-    <link rel="stylesheet" href="contacto.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contactanos</title>
+  <link rel="stylesheet" href="contacto.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="form-section">
-            <h1>Contactanos</h1>
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+  <header class="site-header">
+    <h1 class="site-title">Reparación de Celulares</h1>
+    <nav class="site-nav">
+      <a href="home.html" class="nav-link">Inicio</a>
+      <a href="seleccion.html" class="nav-link">Seleccionar</a>
+      <a href="final_pag.html" class="nav-link is-active">Contacto</a>
+    </nav>
+  </header>
 
-                <label for="tipo">Tipo de revisión o problema:</label>
-                <input type="text" id="tipo" name="tipo" placeholder="Describe el problema" required>
+  <main class="container">
+    <section class="hero">
+      <h2 class="hero__title">Contáctanos</h2>
+      <p class="hero__subtitle">Estamos aquí para ayudarte con tu dispositivo</p>
+    </section>
 
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+    <div class="contact-grid">
+      <div class="form-section">
+        <form>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Tu nombre" required>
 
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Detalles adicionales..." required></textarea>
+          <label for="tipo">Tipo de problema</label>
+          <input type="text" id="tipo" placeholder="Describe el problema" required>
 
-                <button type="submit">Enviar</button>
-            </form>
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" placeholder="tu@email.com" required>
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" rows="5" placeholder="Detalles adicionales..." required></textarea>
+
+          <button type="submit" class="btn btn--primary">Enviar</button>
+        </form>
+      </div>
+
+      <div class="social-section">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://twitter.com" target="_blank">Twitter</a>
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
         </div>
-        <div class="social-section">
-            <h3>Síguenos</h3>
-            <div class="social-icons">
-                <a href="https://instagram.com" target="_blank">📸 Instagram</a>
-                <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
-                <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-                <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
-            </div>
-        </div>
+      </div>
     </div>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 Servicio Técnico</small>
+  </footer>
 </body>
 </html>
