@@ -1,85 +1,100 @@
-body {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    background-color: #1e90ff;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
+:root {
+  --bg: #051946;
+  --surface: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #22d3ee;
+  --primary-ink: #0b1324;
+  --radius: 16px;
+  --space: 1.2rem;
+  --shadow: 0 10px 18px rgba(0, 0, 0, .25);
 }
 
-h1 {
-    color: rgb(248, 14, 14);
-    background-color: white;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: linear-gradient(180deg, #0b1022, var(--bg));
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
 }
+
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(17, 24, 39, .7);
+  backdrop-filter: blur(10px);
+  padding: var(--space);
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+
+.site-title {
+  font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 0;
+}
+
+.site-nav { display: flex; gap: .75rem; }
+.nav-link {
+  color: var(--muted); text-decoration: none;
+  padding: .55rem 1rem; border-radius: 999px; font-weight: 500;
+  transition: all 0.2s ease;
+}
+.nav-link:hover { background: rgba(255,255,255,.06); color: var(--text); }
+.nav-link.is-active { background: rgba(34,211,238,.12); color: var(--primary); }
+
+.container { max-width: 900px; margin: 0 auto; padding: var(--space); }
+
+
+.hero {
+  text-align: center; background: var(--surface);
+  border-radius: var(--radius); padding: 2.5rem;
+  margin-bottom: 2rem; box-shadow: var(--shadow);
+}
+.hero__title { margin: 0 0 .5rem; font-size: 1.8rem; }
+.hero__subtitle { color: var(--muted); font-size: 1rem; }
 
 .tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
+  display: flex; justify-content: center; gap: .5rem; margin-bottom: 2rem;
+  background: var(--surface); padding: .75rem; border-radius: var(--radius);
 }
-
 .tab {
-    padding: 10px 20px;
-    margin: 0 5px;
-    background-color: #ddd;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+  background: rgba(255,255,255,.1); color: var(--muted);
+  border: none; padding: .75rem 1.5rem; border-radius: 999px;
+  cursor: pointer; font-weight: 600; transition: 0.2s;
 }
-
-.tab.active {
-    background-color: #007bff;
-    color: white;
-}
+.tab:hover { background: rgba(255,255,255,.2); }
+.tab.active { background: var(--primary); color: var(--primary-ink); }
 
 .products-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
 }
-
 .product {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 200px;
+  background: var(--surface); border-radius: var(--radius);
+  box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.06);
+  text-align: center; padding: 1.5rem;
 }
-
 .product img {
-    width: 150px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  width: 150px; height: auto; border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+.product p { margin: 0.5rem 0; font-weight: 600; }
+
+
+.btn {
+  padding: .75rem 1.4rem; border-radius: 999px; font-weight: 600;
+  text-align: center; display: inline-block; text-decoration: none;
+  cursor: pointer; border: none; transition: all 0.2s ease;
+}
+.btn--primary {
+  background: linear-gradient(180deg, rgba(34,211,238,.9), rgba(34,211,238,.75));
+  color: var(--primary-ink); box-shadow: 0 8px 18px rgba(34,211,238,.25);
+}
+.btn--primary:hover {
+  filter: saturate(110%); transform: translateY(-2px);
 }
 
-.product button {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    width: 100%;
-}
 
-.product button:hover {
-    background-color: yellow;
-}
+.tab-content { display: none; }
+.tab-content.active { display: grid; }
 
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: flex;
-}
+.site-footer { text-align: center; color: var(--muted); padding: 2rem; font-size: .9rem; }
