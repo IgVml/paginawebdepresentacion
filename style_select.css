@@ -93,3 +93,71 @@ body{
   padding:2rem;
   color:var(--muted);
 }
+
+/*seccion de carrusel*/
+.carousel-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-inner img {
+  object-fit: cover;
+  height: 400px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+body {
+  background-color: #0b1a36; /* tono azul oscuro */
+  color: #f1f1f1;
+}
+
+/* ==== Corrige las tarjetas de los dispositivos ==== */
+.card.dispositivo {
+  background-color: rgba(20, 30, 60, 0.9); /* gris azulado translúcido */
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.dispositivo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+
+.card__img {
+  background-color: transparent; /* blanco detrás del PNG */
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+
+.btn--primary {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 0.5em 1em;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, #0099ff, #004cff);
+  transform: translateY(-2px);
+}
+
+/* ==== ajuste opcional del carrusel ==== */
+.carousel-inner img {
+  border-radius: 20px;
+  object-fit: cover;
+  height: 380px;
+}
